@@ -9,6 +9,9 @@
 	define("PAGE_TYPE", "API");
 	require_once $_SERVER["DOCUMENT_ROOT"] ."/libs/belibrary.php";
 
+	define("MAXIMUM_TIMEOUT", 10*60);
+	set_time_limit(MAXIMUM_TIMEOUT);
+
 	$url = reqQuery("url");
 	$data = Array();
 	$headers = getAllHeadersUC();
@@ -115,7 +118,7 @@
 	curl_setopt($ch, CURLOPT_ENCODING, "");
 	curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-	curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+	curl_setopt($ch, CURLOPT_TIMEOUT, MAXIMUM_TIMEOUT);
 	curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $craftedHeaders);
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $_SERVER["REQUEST_METHOD"]);
