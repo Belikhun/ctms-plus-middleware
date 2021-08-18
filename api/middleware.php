@@ -9,7 +9,7 @@
 	define("PAGE_TYPE", "API");
 	require_once $_SERVER["DOCUMENT_ROOT"] ."/libs/belibrary.php";
 
-	define("MAXIMUM_TIMEOUT", 10*60);
+	define("MAXIMUM_TIMEOUT", 30*60);
 	set_time_limit(MAXIMUM_TIMEOUT);
 
 	$url = reqQuery("url");
