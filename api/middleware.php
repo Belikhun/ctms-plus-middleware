@@ -17,7 +17,7 @@
 	$headers = getAllHeadersUC();
 	$craftedHeaders = Array();
 	$resHeaders = Array();
-	$ignHeaders = Array("content-length", "location", "pragma");
+	$ignHeaders = Array("content-length", "location", "pragma", "access-control-allow-origin", "access-control-allow-headers");
 
 	header("Access-Control-Allow-Origin: ". (isset($headers["Origin"]) ? $headers["Origin"] : "*"));
 	header("Access-Control-Allow-Credentials: true");
